@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 26,
     fontWeight: '600',
-    marginTop: 15,
+    marginTop: 14,
   },
 
   loginContainer: {
