@@ -54,9 +54,13 @@ export default function ProfileScreen() {
   return (
     <>
       <SafeAreaView style={styles.container}>
+      <Pressable onPress={handleSignOut}>
+          <Text>Sign out</Text>
+        </Pressable>
       <View>
         <Image source={{ uri: 'https://president.stanford.edu/wp-content/uploads/sites/3/2020/01/MTL_720px.jpg' }}   
         style={styles.circleImage} />
+       {/* <Text style={styles.heading}>{userProfile.username}</Text> */}
         <Text style={styles.heading}>MTL</Text>
         <Text style={{fontSize: 32}}>64</Text>
         <Text style={{fontSize: 24}}>Stanford University President</Text>
@@ -85,14 +89,6 @@ export default function ProfileScreen() {
       <StatusBar style="auto" />
     </SafeAreaView>
       
-      {loaded && <ScrollView contentContainerStyle={styles.screenContainer}>
-        <View style={styles.header}>
-        <Text style={[styles.screenText, styles.textShadow]}>{userProfile.username}</Text>
-        <Pressable onPress={handleSignOut}>
-          <Text>Sign out</Text>
-        </Pressable>
-        </View>
-      </ScrollView>}
     </>
   );
 }
