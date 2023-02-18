@@ -2,7 +2,6 @@ import { useState } from 'react';
 import supabase from "../../supabase";
 import { Themes } from "../../assets/Themes";
 import { View, ScrollView, Text, TextInput, Pressable, StyleSheet } from "react-native";
-import SignupScreen from './SignupScreen';
 
 export default function LoginScreen({ navigation}) {
   const [email, setEmail] = useState(null);
@@ -69,80 +68,81 @@ export default function LoginScreen({ navigation}) {
 
 
 const styles = StyleSheet.create({
-  // screenContainer: {
-  //   flex: 1,
-  //   padding: 30,
-  //   backgroundColor: Themes.colors.sage,
-  // },
+  screenContainer: {
+    flex: 1,
+    padding: 30,
+    backgroundColor: Themes.colors.sage,
+  },
 
-  // textShadow: {
-  //   textShadowColor: Themes.colors.shadow,
-  //   textShadowOffset: {width: -4, height: 4},
-  //   textShadowRadius: 12,
-  // },
+  textShadow: {
+    textShadowColor: Themes.colors.shadow,
+    textShadowOffset: {width: -4, height: 4},
+    textShadowRadius: 12,
+  },
 
-  // heading: {
-  //   textAlign: 'center',
-  //   fontSize: 26,
-  //   fontWeight: '600',
-  //   marginTop: 15,
-  // },
+  heading: {
+    textAlign: 'center',
+    fontSize: 26,
+    fontWeight: '600',
+    marginTop: 15,
+  },
 
-  // loginContainer: {
-  //   flex: 1,
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  // },
+  loginContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 
-  // title: {
-  //   fontSize: 26,
-  //   fontStyle: 'italic',
-  //   textAlign: 'center',
-  //   marginBottom: 45,
-  // },
+  title: {
+    fontSize: 26,
+    fontStyle: 'italic',
+    textAlign: 'center',
+    marginBottom: 45,
+  },
 
-  // loginForm: {
-  //   alignSelf: 'stretch',
-  //   paddingHorizontal: 17,
-  //   paddingTop: 9,
-  //   paddingBottom: 37,
-  //   backgroundColor: Themes.colors.purple,
-  //   borderRadius: 25,
-  //   marginBottom: 45,
-  // },
+  loginForm: {
+    alignSelf: 'stretch',
+    paddingHorizontal: 17,
+    paddingTop: 9,
+    paddingBottom: 37,
+    backgroundColor: Themes.colors.purple,
+    borderRadius: 25,
+    marginBottom: 45,
+  },
 
-  // inputLabel: {
-  //   marginTop: 9,
-  //   marginBottom: 5,
-  // },
+  inputLabel: {
+    marginTop: 9,
+    marginBottom: 5,
+  },
 
-  // input: {
-  //   height: 40,
-  //   padding: 10,
-  //   backgroundColor: Themes.colors.white,
-  //   borderRadius: 8,
-  // },
+  input: {
+    height: 40,
+    padding: 10,
+    backgroundColor: Themes.colors.white,
+    borderRadius: 8,
+  },
 
-  // errorText: {
-  //   color: Themes.colors.white,
-  //   fontSize: 15,
-  //   paddingVertical: 5,
-  //   paddingHorizontal: 20,
-  //   backgroundColor: Themes.colors.red,
-  //   borderRadius: 100,
-  //   marginTop: 20,
-  // },
+  errorText: {
+    color: Themes.colors.white,
+    fontSize: 15,
+    paddingVertical: 5,
+    paddingHorizontal: 20,
+    backgroundColor: Themes.colors.red,
+    borderRadius: 100,
+    marginTop: 20,
+  },
 
-  // button: {
-  //   paddingHorizontal: 33,
-  //   paddingVertical: 10,
-  //   backgroundColor: Themes.colors.purple,
-  //   borderRadius: 100,
-  // },
+  button: {
+    paddingHorizontal: 33,
+    paddingVertical: 10,
+    backgroundColor: Themes.colors.purple,
+    borderRadius: 100,
+  },
 
-  // buttonText: {
-  //   color: Themes.colors.white,
-  //   fontSize: 20,
-  //   fontWeight: '500',
-  // }
+  buttonText: {
+    color: Themes.colors.white,
+    fontSize: 20,
+    fontWeight: '500',
+  }
 });
+  
