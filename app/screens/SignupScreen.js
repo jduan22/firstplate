@@ -117,7 +117,7 @@ export default function SignupScreen({ navigation}) {
           Already have an account? <Pressable onPress={() => {navigation.navigate('Login')}}><Text>Log in</Text></Pressable>
         </Text>
 
-        {error && <Text style={styles.errorText}>{error}</Text>}
+        {/* {error && <Text style={styles.errorText}>{error}</Text>} */}
       </ScrollView>
     </View>
   );

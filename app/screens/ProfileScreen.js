@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Themes, } from "../../assets/Themes";
 import { NavigationContainer } from '@react-navigation/native';
-import { View, ScrollView, Text, Pressable, StyleSheet} from "react-native";
+import { View, ScrollView, Text, Pressable, StyleSheet, SafeAreaView, Image, StatusBar } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import supabase from "../../supabase";
 
@@ -53,6 +53,38 @@ export default function ProfileScreen() {
 
   return (
     <>
+      <SafeAreaView style={styles.container}>
+      <View>
+        <Image source={{ uri: 'https://president.stanford.edu/wp-content/uploads/sites/3/2020/01/MTL_720px.jpg' }}   
+        style={styles.circleImage} />
+        <Text style={styles.heading}>MTL</Text>
+        <Text style={{fontSize: 32}}>64</Text>
+        <Text style={{fontSize: 24}}>Stanford University President</Text>
+        <Text style={{fontSize: 24}}>📍 Stanford, CA</Text>
+      </View>
+      <View style={styles.profile}>
+        <Text style={styles.subheading}>Food interests</Text>
+        <View style={styles.row}> 
+          <Text style={styles.interestTag}>Italian</Text>
+          <Text style={styles.interestTag}>American</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.interestTag}>French</Text>
+          <Text style={styles.interestTag}>Coffee</Text>
+        </View>
+        <Text style={styles.subheading}>Other interests</Text>
+        <View style={styles.row}>
+          <Text style={styles.interestTag}>Golf</Text>
+          <Text style={styles.interestTag}>Yoga</Text>
+        </View>
+        <View style={styles.row}> 
+          <Text style={styles.interestTag}>Research</Text>
+          <Text style={styles.interestTag}>Tiktok</Text>
+        </View>
+      </View>
+      <StatusBar style="auto" />
+    </SafeAreaView>
+      
       {loaded && <ScrollView contentContainerStyle={styles.screenContainer}>
         <View style={styles.header}>
         <Text style={[styles.screenText, styles.textShadow]}>{userProfile.username}</Text>
@@ -60,73 +92,6 @@ export default function ProfileScreen() {
           <Text>Sign out</Text>
         </Pressable>
         </View>
-        <View style={styles.user}>
-          <Ionicons name="person-circle-outline" size={80}></Ionicons>
-            <View style={styles.names}>
-              <Text style={styles.firstName}>firstName lastName</Text>
-              <Text style={styles.memberSince}>member since 2022</Text>
-            </View>
-        </View>
-        <View style={styles.streaks}>
-          <View>
-            <Text style={styles.streakText}>Streak</Text>
-            <Text style={styles.numberText}>12</Text>
-          </View>
-          <View style={styles.friends}>
-            <Text style={styles.streakText}>Friends</Text>
-            <Text style={styles.numberText}>12</Text>
-          </View>
-        </View>
-        <View style={styles.recordsBox}>
-          <View style={styles.recordsBoxContainer}>
-          <Text style={styles.recordsText}>Personal Records</Text>
-          <View style={styles.weightsBoxContainer}>
-            <View style={styles.weightsBox}>
-              <Text style={styles.liftName}>Deadlift:</Text>
-              <Text style={styles.weightAmount}>115 lbs</Text>
-            </View>
-            <View style={styles.weightsBox}>
-              <Text style={styles.liftName}>Bench:</Text>
-              <Text style={styles.weightAmount}>45 lbs</Text>
-            </View>
-            <View style={styles.weightsBox}>
-              <Text style={styles.liftName}>Squat:</Text>
-              <Text style={styles.weightAmount}>115 lbs</Text>
-            </View>
-          </View>
-          <Text style={styles.recordsText}>Friends</Text>
-          <Text style={styles.friendsText}>Friend1</Text>
-          <View style={styles.weightsBoxContainer}>
-            <View style={styles.weightsBox}>
-              <Text style={styles.liftName}>Deadlift:</Text>
-              <Text style={styles.weightAmount}>135 lbs</Text>
-            </View>
-            <View style={styles.weightsBox}>
-              <Text style={styles.liftName}>Bench:</Text>
-              <Text style={styles.weightAmount}>65 lbs</Text>
-            </View>
-            <View style={styles.weightsBox}>
-              <Text style={styles.liftName}>Squat:</Text>
-              <Text style={styles.weightAmount}>155 lbs</Text>
-            </View>
-          </View> 
-          <Text style={styles.friendsText}>Friend2</Text>
-          <View style={styles.weightsBoxContainer}>
-            <View style={styles.weightsBox}>
-              <Text style={styles.liftName}>Deadlift:</Text>
-              <Text style={styles.weightAmount}>125 lbs</Text>
-            </View>
-            <View style={styles.weightsBox}>
-              <Text style={styles.liftName}>Bench:</Text>
-              <Text style={styles.weightAmount}>90 lbs</Text>
-            </View>
-            <View style={styles.weightsBox}>
-              <Text style={styles.liftName}>Squat:</Text>
-              <Text style={styles.weightAmount}>115 lbs</Text>
-            </View>
-          </View>        
-          </View> 
-          </View>
       </ScrollView>}
     </>
   );
@@ -134,127 +99,60 @@ export default function ProfileScreen() {
 
 
 const styles = StyleSheet.create({
-  weightAmount: {
-    marginTop: '12%',
-    alignSelf: 'center',
-    marginLeft: '-3%',
-    fontSize: 20,
-    fontFamily: 'InterBold',
-    color: Themes.colors.black,
-  },
-  liftName: {
-    padding: '5%',
-    fontSize: 12,
-    fontFamily: 'InterBold',
-    color: Themes.colors.black,
-  },
-  friendsText: {
-    marginLeft: '3%',
-    fontFamily: 'InterBold',
-    color: Themes.colors.darkerGray,
-    fontSize: 13,
-  },
-  recordsBoxContainer: {
-    flexDirection: 'column',
-    paddingTop: '3%',
-  },
-  weightsBoxContainer: {
-    height: '25%',
-    paddingBottom: '5%',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-  },
-  weightsBox: {
-    marginTop: '3%',
-    marginLeft: '3%',
-    width: '27%',
-    height: '100%',
-    marginHorizontal: '3%',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-    borderRadius: 10,
-    backgroundColor: Themes.colors.gray,
-  },
-  recordsBox: {
-    marginTop: '5%',
-    padding: '2%',
-    marginLeft: '-0%',
-    width: '100%',
-    height: '60%',
-    marginHorizontal: '3%',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-    borderRadius: 10,
-    backgroundColor: Themes.colors.white,
-  },
-  recordsText: {
-    marginTop: '2%',
-    marginLeft: '3%',
-    fontFamily: 'InterBold',
-    color: Themes.colors.black,
-    fontSize: 20,
-  },
-  numberText: {
-    marginTop: '3%',
-    fontFamily: 'InterBold',
-    color: Themes.colors.white,
-    fontSize: 20,
-  },
-  streakText: {
-    fontFamily: 'InterBold',
-    color: Themes.colors.darkerGray,
-    fontSize: 26,
-  },
-  friends: {
-    paddingLeft: '30%',
-
-  },
-  streaks: {
-    paddingTop: '5%',
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-  },
-  memberSince: {
-    fontFamily: 'InterBold',
-    color: Themes.colors.darkerGray,
-    marginTop: 5,
-  },
-  firstName: {
-    fontSize: 20,
-    color: Themes.colors.black,
-    fontFamily: 'InterBold',
-  },
-  names: {
-    marginLeft: 10,
-  },
-  user: {
-    marginLeft: '-3%',
-    flexDirection: 'row',
-    marginTop: '5%',
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'flex-start',
-  },
-  header: {
-    marginTop: '15%',
-    flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
   },
-    screenContainer: {
-      flex: 1,
-      padding: 30,
-      backgroundColor: Themes.colors.sage,
-    },
-    screenText: {
-        color: Themes.colors.black,
-        fontFamily: 'InterBold',
-        fontSize: 26,
-        flex: 1
-    },
-    textShadow: {
-      textShadowColor: Themes.colors.shadow,
-      textShadowOffset: {width: -4, height: 4},
-      textShadowRadius: 12,
-    },
-  });
+  profile: {
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  heading: {
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    fontWeight: 'bold',
+    alignSelf: 'left',
+    fontSize: 40,
+    justifyContent: 'center',
+  },
+  subheading: {
+    backgroundColor: '#fff',
+    fontWeight: 'bold',
+    fontSize: 24,
+    textAlign: 'left',
+    alignSelf: 'left',
+    marginTop: 20,
+  },
+  circleImage: {
+    width: 200, 
+    height: 200, 
+    borderRadius: 200/ 2, 
+    alignSelf: 'center',
+  },
+  interestTag: {
+    backgroundColor: '#FF9F9F', 
+    alignSelf: 'flex-start',
+    borderRadius: 20,
+    overflow: 'hidden', 
+    color: 'white',
+    fontSize: 24,
+    textAlign: 'center',
+    paddingHorizontal: 8,
+    paddingVertical: 6,
+    marginRight: 5,
+    width: 155,
+  },
+  curvedTag: {
+    borderRadius: 45,
+  },
+  row: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginTop: 5,
+    marginBottom: 5,
+  }
+});
   
