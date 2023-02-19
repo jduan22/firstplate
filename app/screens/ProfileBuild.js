@@ -11,6 +11,11 @@ export default function ProfileBuild({navigation}) {
 
   return (
       <SafeAreaView style={styles.container}>
+        <Pressable style={{alignSelf: 'left', paddingLeft: 10}}
+          onPress={() => navigation.navigate('Login')}>
+          <Image source={{ uri: 'https://cdn3.iconfinder.com/data/icons/mini-icon-set-web-design-device/91/Web_-_Design_-_Device_97-512.png' }}   
+          style={{width: 40, height: 40}}/>
+        </Pressable>
         <View style={styles.textContainer}>
           <Text style={styles.heading}>Build your profile</Text>
           <Text style={styles.subheading}>What is your date of birth?</Text>
@@ -37,26 +42,36 @@ export default function ProfileBuild({navigation}) {
               placeholderTextColor='#FF9F9F'/>
           <Text style={styles.subheading}>Choose your food interests</Text>
           <View style={styles.row}>
-            <Text style={styles.interestTag}>Italian</Text>
-            <Text style={styles.interestTag}>American</Text>
+            <Text style={styles.button}>Italian</Text>
+            <Text style={styles.button}>French</Text>
+            <Text style={styles.button}>Chinese</Text>
+            <Text style={styles.button}>American</Text>
+            <Text style={styles.button}>Korean</Text>
+            <Text style={styles.button}>Coffee</Text>
+            <Text style={styles.button}>Japanese</Text>
+            <Text style={styles.button}>Indian</Text>
+            <Text style={styles.button}>Dessert</Text>
           </View>
           <Text style={styles.subheading}>Choose your food price range</Text>
           <View style={styles.row}>
-            <Text style={styles.interestTag}>$</Text>
-            <Text style={styles.interestTag}>$$</Text>
-            <Text style={styles.interestTag}>$$$</Text>
-            <Text style={styles.interestTag}>$$$$</Text>
+            <Text style={styles.button}>$</Text>
+            <Text style={styles.button}>$$</Text>
+            <Text style={styles.button}>$$$</Text>
+            <Text style={styles.button}>$$$$</Text>
           </View>
           <Text style={styles.subheading}>Choose your other interests</Text>
           <View style={styles.row}>
-            <Text style={styles.interestTag}>Golf</Text>
-            <Text style={styles.interestTag}>Yoga</Text>
-            <Text style={styles.interestTag}>Email</Text>
+            <Text style={styles.button}>Sports</Text>
+            <Text style={styles.button}>Art</Text>
+            <Text style={styles.button}>Music</Text>
+            <Text style={styles.button}>Travel</Text>
+            <Text style={styles.button}>Cooking</Text>
+            <Text style={styles.button}>Exercise</Text>
           </View>
         </View>
         <View>
           <Pressable onPress={() => {navigation.navigate('Signup')}}>
-            <Text style={styles.button}>Complete profile</Text>
+            <Text style={styles.submitButton}>Complete profile</Text>
           </Pressable>
         </View>
         <StatusBar style="auto" />
@@ -118,14 +133,30 @@ export default function ProfileBuild({navigation}) {
     },
     button: {
       backgroundColor: '#FF9F9F', 
-      alignSelf: 'center',
+      alignSelf: 'flex-stretch',
+      borderRadius: 10,
+      overflow: 'hidden', 
+      color: 'white',
+      fontSize: 20,
+      textAlign: 'center',
+      marginTop: 10,
+      marginRight: 10,
+      paddingLeft: 15,
+      paddingRight: 15
+    },
+    submitButton: {
+      backgroundColor: '#FF9F9F', 
+      fontWeight: 'bold',
+      alignSelf: 'flex-stretch',
       borderRadius: 15,
       overflow: 'hidden', 
       color: 'white',
       fontSize: 24,
       textAlign: 'center',
-      marginTop: 10,
-      width: 150,
+      height: 35,
+      marginTop: 30,
+      paddingLeft: 15,
+      paddingRight: 15
     },
     row: {
       flexDirection: 'row',
