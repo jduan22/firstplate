@@ -50,66 +50,15 @@ export default function App() {
 
 
   return (
-    <NavigationContainer>
+    <NavigationContainer independent>
       {authSession ?
-        <Tab.Navigator tabBarOptions={{ showLabel: false }}>
-          <Tab.Screen name="First Plate" component={HomeScreen}
-            options={{
-                tabBarIcon: ({ focused, tintColor }) => {
-                    return <Image
-                        source={heart}
-                        resizeMode='contain'
-                        style={{
-                            width: 25,
-                            height: 25
-                        }}
-                    />
-                }
-            }}          
-          />
-          <Tab.Screen name="Messages" component={AllMessages} 
-            options={{
-              tabBarIcon: ({ focused, tintColor }) => {
-                  return <Image
-                      source={lovemessage}
-                      resizeMode='contain'
-                      style={{
-                          width: 25,
-                          height: 25
-                      }}
-                  />
-              }
-          }}    
-          />
-          <Tab.Screen name="Pay it Forwards" component={PayScreen} 
-            options={{
-              tabBarIcon: ({ focused, tintColor }) => {
-                  return <Image
-                      source={handmoney}
-                      resizeMode='contain'
-                      style={{
-                          width: 35,
-                          height: 35
-                      }}
-                  />
-              }
-            }}
-          />
-          <Tab.Screen name="Profile" component={ProfileScreen}
-          options={{
-            tabBarIcon: ({ focused, tintColor }) => {
-                return <Image
-                    source={profile}
-                    resizeMode='contain'
-                    style={{
-                        width: 25,
-                        height: 25
-                    }}
-                />
-            }
-          }}
-          />
-        </Tab.Navigator>
+        <Stack.Navigator initialRouteName="MainTab" screenOptions={{
+          headerShown: false
+        }}>
+          <Stack.Screen name="MainTab" component={MainTab}/>
+          <Stack.Screen name="AllMessages" component={AllMessages} />
+          <Stack.Screen name="Message" component={Message}/> 
+        </Stack.Navigator>
         :
         <Stack.Navigator>
           <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
@@ -119,6 +68,67 @@ export default function App() {
       }
     </NavigationContainer>
   );
+}
+
+function MainTab() {
+  return <Tab.Navigator tabBarOptions={{ showLabel: false }}>
+  <Tab.Screen name="First Plate" component={HomeScreen}
+    options={{
+        tabBarIcon: ({ focused, tintColor }) => {
+            return <Image
+                source={heart}
+                resizeMode='contain'
+                style={{
+                    width: 25,
+                    height: 25
+                }}
+            />
+        }
+    }}          
+  />
+  <Tab.Screen name="Messages" component={AllMessages} 
+    options={{
+      tabBarIcon: ({ focused, tintColor }) => {
+          return <Image
+              source={lovemessage}
+              resizeMode='contain'
+              style={{
+                  width: 25,
+                  height: 25
+              }}
+          />
+      }
+  }}    
+  />
+  <Tab.Screen name="Pay it Forwards" component={PayScreen} 
+    options={{
+      tabBarIcon: ({ focused, tintColor }) => {
+          return <Image
+              source={handmoney}
+              resizeMode='contain'
+              style={{
+                  width: 35,
+                  height: 35
+              }}
+          />
+      }
+    }}
+  />
+  <Tab.Screen name="Profile" component={ProfileScreen}
+  options={{
+    tabBarIcon: ({ focused, tintColor }) => {
+        return <Image
+            source={profile}
+            resizeMode='contain'
+            style={{
+                width: 25,
+                height: 25
+            }}
+        />
+    }
+  }}
+  />
+</Tab.Navigator>
 }
 
 const styles = StyleSheet.create({

@@ -3,8 +3,10 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, SafeAreaView, Pressable, TouchableOpacity} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+// import Message from "./app/screens/Message.js";
 
 export default function AllMessages({navigation}) {
+  // const messagesStack = createNativeStackNavigator()
   return (
     <SafeAreaView style={styles.container}>
       <SafeAreaView class = "listOfMessages">
@@ -15,7 +17,7 @@ export default function AllMessages({navigation}) {
             style={styles.circleImage} />
             </SafeAreaView>
             <SafeAreaView style={styles.name}>
-            <Pressable onPress={() => {navigation.navigate('Message')}}>
+            <Pressable onPress={() => {navigation.push('Message')}}>
              <Text style={styles.realName}>Persis Drell </Text></Pressable>
               <Text>Typing...</Text>
             </SafeAreaView>
