@@ -13,6 +13,8 @@ import SignupScreen from "./app/screens/SignupScreen.js";
 import HomeScreen from "./app/screens/HomeScreen.js";
 import PayScreen from "./app/screens/PayScreen.js";
 import AllMessages from "./app/screens/AllMessages.js";
+import BuildProfile from "./app/screens/ProfileBuild.js";
+
 
 
 
@@ -58,6 +60,7 @@ export default function App() {
         <Stack.Navigator>
           <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
           <Stack.Screen name="Signup" component={SignupScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="BuildProfile" component={BuildProfile} options={{ headerShown: false }} />
         </Stack.Navigator>
       }
     </NavigationContainer>
