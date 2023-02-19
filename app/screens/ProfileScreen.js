@@ -81,7 +81,7 @@ export default function ProfileScreen() {
             <Text style={styles.interestTag}>Research</Text>
             <Text style={styles.interestTag}>Tiktok</Text>
           </View>
-          <Pressable onPress={handleSignOut}>
+          <Pressable style={styles.signout} onPress={handleSignOut}>
             <Text>Sign out</Text>
           </Pressable>
         </View>
@@ -93,6 +93,9 @@ export default function ProfileScreen() {
 
 
 const styles = StyleSheet.create({
+  signout: {
+    marginTop: 15,
+  },
   container: {
     flex: 1,
     backgroundColor: '#fff',
