@@ -2,8 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { View, Text, TextInput, Pressable, StyleSheet, SafeAreaView, Image } from "react-native";
 
-let name = "Lucia";
-let email = "langaneylucia03@gmail.com";
+let name = "Kayla";
+let email = "keysofparadise1@gmail.com";
 let description = "Someone paid for your plate!";
 
 export default function PayScreen() {
@@ -16,7 +16,7 @@ export default function PayScreen() {
           <View style={styles.text}>
           <Text>Enjoyed your plate? Pay it forward by funding another person's plate!</Text>
           </View>
-          <Image source={{ uri: 'https://d112y698adiu2z.cloudfront.net/photos/production/user_photos/001/651/471/datas/profile.png' }}   
+          <Image source={{ uri: 'https://womans-worth.com/wp-content/uploads/smiling-woman.jpg' }}   
         style={styles.circleImage} />
         <View style={styles.formContainer}>
           <View style={styles.input}>
