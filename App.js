@@ -11,7 +11,9 @@ import LoginScreen from "./app/screens/LoginScreen.js";
 import ProfileScreen from "./app/screens/ProfileScreen.js";
 import SignupScreen from "./app/screens/SignupScreen.js";
 import HomeScreen from "./app/screens/HomeScreen.js";
-import PayScreen from "./app/screens/PayScreen";
+import PayScreen from "./app/screens/PayScreen.js";
+import AllMessages from "./app/screens/AllMessages.js";
+
 
 
 const Tab = createBottomTabNavigator();
@@ -46,8 +48,10 @@ export default function App() {
     <NavigationContainer>
       {authSession ?
         <Tab.Navigator>
-          <Tab.Screen name="Pay it Forwards" component={PayScreen} />
           <Tab.Screen name="First Plate" component={HomeScreen} />
+          <Tab.Screen name="Messages" component={AllMessages} />
+
+          <Tab.Screen name="Pay it Forwards" component={PayScreen} />
           <Tab.Screen name="Profile" component={ProfileScreen} />
         </Tab.Navigator>
         :

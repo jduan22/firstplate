@@ -6,7 +6,7 @@ function onPressFunction() {
   //navigation function here
 }
 
-export default function App() {
+export default function AllMessages() {
   return (
     <SafeAreaView style={styles.container}>
       
@@ -38,7 +38,7 @@ export default function App() {
 
         </SafeAreaView>
 
-        <hr />
+        {/* <hr /> */}
 
         <SafeAreaView class = "singularMessages" style={styles.messageContainer}>
 

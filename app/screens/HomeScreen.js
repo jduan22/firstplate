@@ -5,76 +5,143 @@ import { View, ScrollView, Text, Pressable, StyleSheet, SafeAreaView, Image, Sta
 import { Ionicons } from '@expo/vector-icons';
 import supabase from "../../supabase";
 
-export default function HomeScreen({ navigation }) {
+const App = () => {
   return (
-    <ScrollView style={styles.scroll}>
-      <View style={styles.row}>
-        <View style={styles.interestTag}><Text>Tuesday, February 14th</Text></View>
-        <View style={styles.interestTag}><Text>6:30pm</Text></View>
-      </View>
-      <Image
-        style={styles.imageOne}
-        source={{
-          uri: 'https://images.squarespace-cdn.com/content/v1/627920d33ad21c07ac453be9/db1ce836-9c9d-424f-8413-b76fb7366c5c/zareens-redwood-city.png',
-        }}
-      />
-      <View style={styles.restaurantOne}>
-        <View style={styles.zareensTitle}>
-          <Text>Zareen's</Text>
-          <Text>3 miles away</Text>
+    <SafeAreaView style={styles.scroll}>
+      <ScrollView style={{flex: 1}}>
+        <View style={styles.row}>
+          <View style={styles.interestTag}><Text>Tuesday, February 14th</Text></View>
+          <View style={styles.interestTag}><Text>6:30pm</Text></View>
         </View>
-        <View>
-          <Text> 📍 palo alto </Text>
-          <Text> 🍛 pakistani food </Text>
-          <Text> 💲 20-30 per person </Text>
-          <Text> www.zareensrestaurant.com </Text>
-        </View>
-      </View>
-      <View style={styles.pink}>
-        <View style={styles.vertical}>
-          <Text style={styles.bold}>address</Text>
-          <Image style={styles.imageTwo} source={{uri: 'https://10619-2.s.cdn12.com/maps/zareens-palo-alto-map.jpg'}}/>
-          <Text>zareen's info</Text>
+        <Image
+          style={styles.imageOne}
+          source={{
+            uri: 'https://images.squarespace-cdn.com/content/v1/627920d33ad21c07ac453be9/db1ce836-9c9d-424f-8413-b76fb7366c5c/zareens-redwood-city.png',
+          }}
+        />
+
+        <View style={styles.restaurantOne}>
+          <View style={styles.zareensTitle}>
+            <Text>Zareen's</Text>
+            <Text>3 miles away</Text>
+          </View>
           <View>
+            <Text> 📍 palo alto </Text>
+            <Text> 🍛 pakistani food </Text>
+            <Text> 💲 20-30 per person </Text>
+            <Text> www.zareensrestaurant.com </Text>
+          </View>
+        </View>
+        <View style={styles.pink}>
+          <View style={styles.vertical}>
+            <Text style={styles.bold}>address</Text>
+            <Image style={styles.imageTwo} source={{ uri: 'https://10619-2.s.cdn12.com/maps/zareens-palo-alto-map.jpg' }} />
+            <Text>zareen's info</Text>
             <View>
               <View>
-                <Text> $20-30</Text>
+                <View>
+                  <Text> $20-30</Text>
+                </View>
+                <View>
+                  <Text>pakistani/indian</Text>
+                </View>
               </View>
               <View>
-                <Text>pakistani/indian</Text>
-              </View>
-            </View>
-            <View>
-              <View>
-                <Text>intimate vibe</Text>
-              </View>
-              <View>
-                <Text>vegan-friendly</Text>
-              </View>
-            </View>
-            <View>
-              <View>
-                <Text>gluten-free</Text>
+                <View>
+                  <Text>intimate vibe</Text>
+                </View>
+                <View>
+                  <Text>vegan-friendly</Text>
+                </View>
               </View>
               <View>
-                <Text>lgbtq+ friendly</Text>
+                <View>
+                  <Text>gluten-free</Text>
+                </View>
+                <View>
+                  <Text>lgbtq+ friendly</Text>
+                </View>
               </View>
-            </View>
-            <View>
               <View>
-                <Text>woman owned</Text>
+                <View>
+                  <Text>woman owned</Text>
+                </View>
               </View>
             </View>
           </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </SafeAreaView>
   );
-}
+};
+
+export default App;
+
+// export default function HomeScreen({ navigation }) {
+//   return (
+//     <SafeAreaView style={styles.scroll}>
+//     <ScrollView>
+
+//   <View style={styles.restaurantOne}>
+//     <View style={styles.zareensTitle}>
+//       <Text>Zareen's</Text>
+//       <Text>3 miles away</Text>
+//     </View>
+//     <View>
+//       <Text> 📍 palo alto </Text>
+//       <Text> 🍛 pakistani food </Text>
+//       <Text> 💲 20-30 per person </Text>
+//       <Text> www.zareensrestaurant.com </Text>
+//     </View>
+//   </View>
+//   <View style={styles.pink}>
+//     <View style={styles.vertical}>
+//       <Text style={styles.bold}>address</Text>
+//       <Image style={styles.imageTwo} source={{uri: 'https://10619-2.s.cdn12.com/maps/zareens-palo-alto-map.jpg'}}/>
+//       <Text>zareen's info</Text>
+//       <View>
+//         <View>
+//           <View>
+//             <Text> $20-30</Text>
+//           </View>
+//           <View>
+//             <Text>pakistani/indian</Text>
+//           </View>
+//         </View>
+//         <View>
+//           <View>
+//             <Text>intimate vibe</Text>
+//           </View>
+//           <View>
+//             <Text>vegan-friendly</Text>
+//           </View>
+//         </View>
+//         <View>
+//           <View>
+//             <Text>gluten-free</Text>
+//           </View>
+//           <View>
+//             <Text>lgbtq+ friendly</Text>
+//           </View>
+//         </View>
+//         <View>
+//           <View>
+//             <Text>woman owned</Text>
+//           </View>
+//         </View>
+//       </View>
+//     </View>
+//   </View>
+// </ScrollView>
+// </SafeAreaView>
+//   );
+// }
 
 const styles = StyleSheet.create({
   scroll: {
     flex: 1,
+    paddingTop: StatusBar.currentHeight,
+    height: '500%',
   },
   vertical: {
     paddingTop: '2%',
@@ -91,9 +158,10 @@ const styles = StyleSheet.create({
     width: '93%',
     alignSelf: 'center',
     borderRadius: 20,
-    height: 200,
+    height: '200%',
   },
   restaurantOne: {
+    
     backgroundColor: 'white',
     padding: 8,
     paddingLeft: 10,
@@ -137,6 +205,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     marginTop: 5,
     marginBottom: 5,
+    
   },
   zareensTitle: {
     alignContent: 'center',
