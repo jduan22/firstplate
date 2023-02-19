@@ -98,6 +98,7 @@ export default function SignupScreen({ navigation}) {
           <View style={styles.inputContainer}>
             <Text style={[styles.inputLabel, styles.textShadow]}>password:</Text>
             <TextInput
+              secureTextEntry = {true}
               style={styles.input}
               onChangeText={setPassword}
               value={password}
@@ -117,7 +118,7 @@ export default function SignupScreen({ navigation}) {
           Already have an account? <Pressable onPress={() => {navigation.navigate('Login')}}><Text>Log in</Text></Pressable>
         </Text>
 
-        {/* {error && <Text style={styles.errorText}>{error}</Text>} */}
+        {error && <Text style={styles.errorText}>{error}</Text>}
       </ScrollView>
     </View>
   );
