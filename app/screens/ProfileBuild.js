@@ -1,13 +1,33 @@
 import React, {Component} from 'react';
 import {useState} from 'react';
+import {pressed} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, SafeAreaView, Pressable, Image } from 'react-native';
+import { StyleSheet, Text, View, TextInput, SafeAreaView, Pressable, Image, TouchableOpacity } from 'react-native';
 import DatePicker from 'react-native-datepicker';
 
 export default function ProfileBuild({navigation}) {
   const [date, setDate] = useState(new Date());
   const [open, setOpen] = useState(false);
   const [city, setCity] = useState(null);
+  const [selected1, setSelected1] = useState(false);
+  const [selected2, setSelected2] = useState(false);
+  const [selected3, setSelected3] = useState(false);
+  const [selected4, setSelected4] = useState(false);
+  const [selected5, setSelected5] = useState(false);
+  const [selected6, setSelected6] = useState(false);
+  const [selected7, setSelected7] = useState(false);
+  const [selected8, setSelected8] = useState(false);
+  const [selected9, setSelected9] = useState(false);
+  const [selected10, setSelected10] = useState(false);
+  const [selected11, setSelected11] = useState(false);
+  const [selected12, setSelected12] = useState(false);
+  const [selected13, setSelected13] = useState(false);
+  const [selected14, setSelected14] = useState(false);
+  const [selected15, setSelected15] = useState(false);
+  const [selected16, setSelected16] = useState(false);
+  const [selected17, setSelected17] = useState(false);
+  const [selected18, setSelected18] = useState(false);
+  const [selected19, setSelected19] = useState(false);
 
   return (
       <SafeAreaView style={styles.container}>
@@ -42,31 +62,107 @@ export default function ProfileBuild({navigation}) {
               placeholderTextColor='#FF9F9F'/>
           <Text style={styles.subheading}>Choose your food interests</Text>
           <View style={styles.row}>
-            <Text style={styles.button}>Italian</Text>
-            <Text style={styles.button}>French</Text>
-            <Text style={styles.button}>Chinese</Text>
-            <Text style={styles.button}>American</Text>
-            <Text style={styles.button}>Korean</Text>
-            <Text style={styles.button}>Coffee</Text>
-            <Text style={styles.button}>Japanese</Text>
-            <Text style={styles.button}>Indian</Text>
-            <Text style={styles.button}>Dessert</Text>
+          <TouchableOpacity
+            onPress={() => setSelected1(!selected1)}
+            style={[{ backgroundColor: selected1 ? '#FF9F9F' : '#FFCDD2' }, styles.buttonText]}>
+            <Text style={styles.buttonText}>Italian</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => setSelected2(!selected2)}
+            style={[{ backgroundColor: selected2 ? '#FF9F9F' : '#FFCDD2' }, styles.buttonText]}>
+            <Text style={styles.buttonText}>French</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => setSelected3(!selected3)}
+            style={[{ backgroundColor: selected3 ? '#FF9F9F' : '#FFCDD2' }, styles.buttonText]}>
+            <Text style={styles.buttonText}>Chinese</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => setSelected4(!selected4)}
+            style={[{ backgroundColor: selected4 ? '#FF9F9F' : '#FFCDD2' }, styles.buttonText]}>
+            <Text style={styles.buttonText}>American</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => setSelected5(!selected5)}
+            style={[{ backgroundColor: selected5 ? '#FF9F9F' : '#FFCDD2' }, styles.buttonText]}>
+            <Text style={styles.buttonText}>Korean</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => setSelected6(!selected6)}
+            style={[{ backgroundColor: selected6 ? '#FF9F9F' : '#FFCDD2' }, styles.buttonText]}>
+            <Text style={styles.buttonText}>Coffee</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => setSelected7(!selected7)}
+            style={[{ backgroundColor: selected7 ? '#FF9F9F' : '#FFCDD2' }, styles.buttonText]}>
+            <Text style={styles.buttonText}>Japanese</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => setSelected8(!selected8)}
+            style={[{ backgroundColor: selected8 ? '#FF9F9F' : '#FFCDD2' }, styles.buttonText]}>
+            <Text style={styles.buttonText}>Indian</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => setSelected9(!selected9)}
+            style={[{ backgroundColor: selected9 ? '#FF9F9F' : '#FFCDD2' }, styles.buttonText]}>
+            <Text style={styles.buttonText}>Dessert</Text>
+          </TouchableOpacity>
           </View>
           <Text style={styles.subheading}>Choose your food price range</Text>
           <View style={styles.row}>
-            <Text style={styles.button}>$</Text>
-            <Text style={styles.button}>$$</Text>
-            <Text style={styles.button}>$$$</Text>
-            <Text style={styles.button}>$$$$</Text>
+            <TouchableOpacity
+              onPress={() => setSelected10(!selected10)}
+              style={[{ backgroundColor: selected10 ? '#FF9F9F' : '#FFCDD2' }, styles.buttonText]}>
+              <Text style={styles.buttonText}>$</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => setSelected11(!selected11)}
+              style={[{ backgroundColor: selected11 ? '#FF9F9F' : '#FFCDD2' }, styles.buttonText]}>
+              <Text style={styles.buttonText}>$$</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => setSelected12(!selected12)}
+              style={[{ backgroundColor: selected12 ? '#FF9F9F' : '#FFCDD2' }, styles.buttonText]}>
+              <Text style={styles.buttonText}>$$$</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => setSelected13(!selected13)}
+              style={[{ backgroundColor: selected13 ? '#FF9F9F' : '#FFCDD2' }, styles.buttonText]}>
+              <Text style={styles.buttonText}>$$$$</Text>
+            </TouchableOpacity>
           </View>
           <Text style={styles.subheading}>Choose your other interests</Text>
           <View style={styles.row}>
-            <Text style={styles.button}>Sports</Text>
-            <Text style={styles.button}>Art</Text>
-            <Text style={styles.button}>Music</Text>
-            <Text style={styles.button}>Travel</Text>
-            <Text style={styles.button}>Cooking</Text>
-            <Text style={styles.button}>Exercise</Text>
+            <TouchableOpacity
+              onPress={() => setSelected14(!selected14)}
+              style={[{ backgroundColor: selected14 ? '#FF9F9F' : '#FFCDD2' }, styles.buttonText]}>
+              <Text style={styles.buttonText}>Sports</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => setSelected15(!selected15)}
+              style={[{ backgroundColor: selected15 ? '#FF9F9F' : '#FFCDD2' }, styles.buttonText]}>
+              <Text style={styles.buttonText}>Art</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => setSelected16(!selected16)}
+              style={[{ backgroundColor: selected16 ? '#FF9F9F' : '#FFCDD2' }, styles.buttonText]}>
+              <Text style={styles.buttonText}>Music</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => setSelected17(!selected17)}
+              style={[{ backgroundColor: selected17 ? '#FF9F9F' : '#FFCDD2' }, styles.buttonText]}>
+              <Text style={styles.buttonText}>Travel</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => setSelected18(!selected18)}
+              style={[{ backgroundColor: selected18 ? '#FF9F9F' : '#FFCDD2' }, styles.buttonText]}>
+              <Text style={styles.buttonText}>Cooking</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => setSelected19(!selected19)}
+              style={[{ backgroundColor: selected19 ? '#FF9F9F' : '#FFCDD2' }, styles.buttonText]}>
+              <Text style={styles.buttonText}>Exercise</Text>
+            </TouchableOpacity>
           </View>
         </View>
         <View>
@@ -133,7 +229,7 @@ export default function ProfileBuild({navigation}) {
     },
     button: {
       backgroundColor: '#FF9F9F', 
-      alignSelf: 'flex-stretch',
+      alignSelf: 'center',
       borderRadius: 10,
       overflow: 'hidden', 
       color: 'white',
@@ -143,6 +239,19 @@ export default function ProfileBuild({navigation}) {
       marginRight: 10,
       paddingLeft: 15,
       paddingRight: 15
+    },
+    buttonText: {
+      borderRadius: 10,
+      overflow: 'hidden', 
+      color: 'white',
+      fontSize: 20,
+      textAlign: 'center',
+      marginRight: 10,
+      marginBottom: 10,
+      paddingLeft: 5,
+      paddingRight: 5,
+      paddingBottom: 10,
+      height: 25
     },
     submitButton: {
       backgroundColor: '#FF9F9F', 
