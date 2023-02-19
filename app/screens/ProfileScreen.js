@@ -54,52 +54,39 @@ export default function ProfileScreen() {
   return (
     <>
       <SafeAreaView style={styles.container}>
-        <SafeAreaView style={styles.navBar}>
-          <Pressable onPress={() => navigation.navigate('AllMessages')}>
-            <Image source={{ uri: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.iconpacks.net%2Ffree-icon%2Flove-message-2947.html&psig=AOvVaw1sAbmmELV5owb7MtM92BO1&ust=1676866130622000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCNCmjaLboP0CFQAAAAAdAAAAABAE' }}   
-            style={{width: 40, height: 40}}/>
-          </Pressable>
-
+        <View>
+          <Image source={{ uri: 'https://president.stanford.edu/wp-content/uploads/sites/3/2020/01/MTL_720px.jpg' }}
+            style={styles.circleImage} />
+          <Text style={styles.heading}>MTL</Text>
+          <Text style={{ fontSize: 32 }}>64</Text>
+          <Text style={{ fontSize: 24 }}>Stanford University President</Text>
+          <Text style={{ fontSize: 24 }}>📍 Stanford, CA</Text>
+        </View>
+        <View style={styles.profile}>
+          <Text style={styles.subheading}>Food interests</Text>
+          <View style={styles.row}>
+            <Text style={styles.interestTag}>Italian</Text>
+            <Text style={styles.interestTag}>American</Text>
+          </View>
+          <View style={styles.row}>
+            <Text style={styles.interestTag}>French</Text>
+            <Text style={styles.interestTag}>Coffee</Text>
+          </View>
+          <Text style={styles.subheading}>Other interests</Text>
+          <View style={styles.row}>
+            <Text style={styles.interestTag}>Golf</Text>
+            <Text style={styles.interestTag}>Yoga</Text>
+          </View>
+          <View style={styles.row}>
+            <Text style={styles.interestTag}>Research</Text>
+            <Text style={styles.interestTag}>Tiktok</Text>
+          </View>
           <Pressable onPress={handleSignOut}>
-            <Text style={styles.subheading}>Sign out</Text>
+            <Text>Sign out</Text>
           </Pressable>
-        </SafeAreaView>
-      
-
-
-
-      <View>
-        <Image source={{ uri: 'https://president.stanford.edu/wp-content/uploads/sites/3/2020/01/MTL_720px.jpg' }}   
-        style={styles.circleImage} />
-       {/* <Text style={styles.heading}>{userProfile.username}</Text> */}
-        <Text style={styles.heading}>MTL</Text>
-        <Text style={{fontSize: 32}}>64</Text>
-        <Text style={{fontSize: 24}}>Stanford University President</Text>
-        <Text style={{fontSize: 24}}>📍 Stanford, CA</Text>
-      </View>
-      <View style={styles.profile}>
-        <Text style={styles.subheading}>Food interests</Text>
-        <View style={styles.row}> 
-          <Text style={styles.interestTag}>Italian</Text>
-          <Text style={styles.interestTag}>American</Text>
         </View>
-        <View style={styles.row}>
-          <Text style={styles.interestTag}>French</Text>
-          <Text style={styles.interestTag}>Coffee</Text>
-        </View>
-        <Text style={styles.subheading}>Other interests</Text>
-        <View style={styles.row}>
-          <Text style={styles.interestTag}>Golf</Text>
-          <Text style={styles.interestTag}>Yoga</Text>
-        </View>
-        <View style={styles.row}> 
-          <Text style={styles.interestTag}>Research</Text>
-          <Text style={styles.interestTag}>Tiktok</Text>
-        </View>
-      </View>
-      <StatusBar style="auto" />
-    </SafeAreaView>
-      
+        <StatusBar style="auto" />
+      </SafeAreaView>
     </>
   );
 }
@@ -134,16 +121,16 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   circleImage: {
-    width: 200, 
-    height: 200, 
-    borderRadius: 200/ 2, 
+    width: 200,
+    height: 200,
+    borderRadius: 200 / 2,
     alignSelf: 'center',
   },
   interestTag: {
-    backgroundColor: '#FF9F9F', 
+    backgroundColor: '#FF9F9F',
     alignSelf: 'flex-start',
     borderRadius: 20,
-    overflow: 'hidden', 
+    overflow: 'hidden',
     color: 'white',
     fontSize: 24,
     textAlign: 'center',
@@ -168,4 +155,3 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
 });
-  

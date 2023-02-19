@@ -10,13 +10,17 @@ import { Ionicons } from '@expo/vector-icons';
 import LoginScreen from "./app/screens/LoginScreen.js";
 import ProfileScreen from "./app/screens/ProfileScreen.js";
 import SignupScreen from "./app/screens/SignupScreen.js";
+import HomeScreen from "./app/screens/HomeScreen.js";
+import PayScreen from "./app/screens/PayScreen.js";
+import AllMessages from "./app/screens/AllMessages.js";
+
 
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 export default function App() {
-  const [authSession, setAuthSession] = useState(false);
+  const [authSession, setAuthSession] = useState(null);
 
   useEffect(() => {
     const fetchSession = async () => {
@@ -34,8 +38,8 @@ export default function App() {
 
     // listen to onAuthStateChange and update authSession
     supabase.auth.onAuthStateChange((event, session) => {
-      console.log(event, session);
-      setAuthSession(session);
+      console.log(event, session)
+        setAuthSession(session);
     })
   }, []);
 
@@ -43,32 +47,17 @@ export default function App() {
   return (
     <NavigationContainer>
       {authSession ?
-        <Tab.Navigator
-          screenOptions={({ route }) => ({
-            headerShown: false,
-            labelStyle: { fontSize: 30 },
-            tabBarIcon: ({ focused }) => {
-              let iconName;
+        <Tab.Navigator>
+          <Tab.Screen name="First Plate" component={HomeScreen} />
+          <Tab.Screen name="Messages" component={AllMessages} />
 
-              if (route.name === 'Friends') {
-                iconName = focused ? 'people' : 'people-outline';
-              } else if (route.name === 'Calendar') {
-                iconName = focused ? 'calendar' : 'calendar-outline';
-              } else if (route.name === 'Workout') {
-                iconName = focused ? 'barbell' : 'barbell-outline';
-              } else if (route.name === 'Profile') {
-                iconName = focused  ? 'person'  : 'person-outline';
-              }
-              // change color!!! 
-              return <Ionicons name={iconName} size={24} color="black" />;
-            }
-          })}>
+          <Tab.Screen name="Pay it Forwards" component={PayScreen} />
           <Tab.Screen name="Profile" component={ProfileScreen} />
         </Tab.Navigator>
         :
         <Stack.Navigator>
-          <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}} />
-          <Stack.Screen name="Signup" component={SignupScreen} options={{headerShown: false}} />
+          <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Signup" component={SignupScreen} options={{ headerShown: false }} />
         </Stack.Navigator>
       }
     </NavigationContainer>

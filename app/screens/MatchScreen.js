@@ -3,7 +3,7 @@ import {useRef} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, SafeAreaView, Pressable, Animated } from 'react-native';
 
-export default function App() {
+export default function MatchScreen() {
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const fadeIn = () => {
     // Will change fadeAnim value to 1 in 5 seconds

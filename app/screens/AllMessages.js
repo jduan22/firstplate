@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image, SafeAreaView, Pressable, TouchableOpacit
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export default function App() {
+export default function AllMessages() {
   return (
     <SafeAreaView style={styles.container}>
       
@@ -36,7 +36,7 @@ export default function App() {
 
         </SafeAreaView>
 
-        <hr />
+        {/* <hr /> */}
 
         <SafeAreaView class = "singularMessages" style={styles.messageContainer}>
 
