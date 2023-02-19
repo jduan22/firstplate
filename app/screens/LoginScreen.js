@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import supabase from "../../supabase";
 import { Themes } from "../../assets/Themes";
-import { View, ScrollView, Text, TextInput, Pressable, StyleSheet } from "react-native";
+import { View, Text, TextInput, Pressable, StyleSheet, Image } from "react-native";
 
 export default function LoginScreen({ navigation}) {
   const [email, setEmail] = useState(null);
@@ -21,30 +21,28 @@ export default function LoginScreen({ navigation}) {
   }
   
   return (
-    <View style={styles.screenContainer}>
-      <Text style={[styles.heading, styles.textShadow]}>fitness with friends!</Text>
+    <View style={styles.container}>
+      <Image source={require('./firstplateicon.png')} 
+      style={{width:200, height:200}}/>
+      <Text style={styles.heading}>first plates</Text>
+      <Text style={styles.subheading}>Choose a plate.</Text>
+      <Text style={styles.subheading}>Go on a date.</Text>
 
-      <ScrollView contentContainerStyle={styles.loginContainer}>
-        <Text style={[styles.title, styles.textShadow]}>welcome back.</Text>
-
-        <View style={styles.loginForm}>
+        <View>
           <View style={styles.inputContainer}>
-            <Text style={[styles.inputLabel, styles.textShadow]}>email:</Text>
             <TextInput
               style={styles.input}
               onChangeText={setEmail}
               value={email}
-              placeholder=""
+              placeholder="email"
+              placeholderTextColor='#FF9F9F'
             />
-          </View>
-          
-          <View style={styles.inputContainer}>
-            <Text style={[styles.inputLabel, styles.textShadow]}>password:</Text>
             <TextInput
               style={styles.input}
               onChangeText={setPassword}
               value={password}
-              placeholder=""
+              placeholder="password"
+              placeholderTextColor='#FF9F9F'
             />
           </View>
         </View>
@@ -53,75 +51,79 @@ export default function LoginScreen({ navigation}) {
           style={styles.button}
           onPress={handleSignIn}
         >
-          <Text style={[styles.buttonText, styles.textShadow]}>let's move</Text>
+          <Text style={styles.button}>Let's eat</Text>
         </Pressable >
 
-        <Text style={styles.smallText}>
+        <Text style={{marginTop: 20}}>
           Don't have an account? <Pressable onPress={() => {navigation.navigate('Signup')}}><Text>Sign up</Text></Pressable>
         </Text>
 
         {error && <Text style={styles.errorText}>{error}</Text>}
-      </ScrollView>
     </View>
   );
 }
 
 
 const styles = StyleSheet.create({
-  screenContainer: {
-    flex: 1,
-    padding: 30,
-    backgroundColor: Themes.colors.sage,
-  },
-
-  textShadow: {
-    textShadowColor: Themes.colors.shadow,
-    textShadowOffset: {width: -4, height: 4},
-    textShadowRadius: 12,
-  },
-
-  heading: {
-    textAlign: 'center',
-    fontSize: 26,
-    fontWeight: '600',
-    marginTop: 14,
-  },
-
-  loginContainer: {
+  container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#fff'
   },
-
-  title: {
-    fontSize: 26,
-    fontStyle: 'italic',
-    textAlign: 'center',
-    marginBottom: 45,
-  },
-
-  loginForm: {
+  inputContainer: {
+    paddingTop: 10,
+    paddingBottom: 10,
+    marginTop: 20,
+    marginBottom: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
     alignSelf: 'stretch',
-    paddingHorizontal: 17,
-    paddingTop: 9,
-    paddingBottom: 37,
-    backgroundColor: Themes.colors.purple,
-    borderRadius: 25,
-    marginBottom: 45,
+    width: 300
   },
-
-  inputLabel: {
-    marginTop: 9,
-    marginBottom: 5,
+  heading: {
+    alignItems: 'center',
+    fontWeight: 'bold',
+    alignSelf: 'center',
+    fontSize: 41,
+    justifyContent: 'center',
+    marginBottom: 10, 
   },
-
+  subheading: {
+    fontWeight: 'bold',
+    fontSize: 24,
+    textAlign: 'center',
+    alignSelf: 'center'
+  },
+  button: {
+    backgroundColor: '#FF9F9F', 
+    alignSelf: 'center',
+    borderRadius: 20,
+    overflow: 'hidden', 
+    color: 'white',
+    fontSize: 24,
+    textAlign: 'center',
+    paddingHorizontal: 8,
+    paddingVertical: 6,
+    marginRight: 5,
+    width: 170,
+  },
   input: {
+    backgroundColor: 'white',
     height: 40,
     padding: 10,
-    backgroundColor: Themes.colors.white,
-    borderRadius: 8,
+    marginTop: 20,
+    marginBottom: 20,
+    marginLeft: 10,
+    marginRight: 10,
+    alignSelf: 'stretch',
+    borderRadius: 20,
+    borderColor: '#FF9F9F',
+    borderWidth: 2
   },
-
+  curvedTag: {
+    borderRadius: 45,
+  },
   errorText: {
     color: Themes.colors.white,
     fontSize: 15,
@@ -130,19 +132,6 @@ const styles = StyleSheet.create({
     backgroundColor: Themes.colors.red,
     borderRadius: 100,
     marginTop: 20,
-  },
-
-  button: {
-    paddingHorizontal: 33,
-    paddingVertical: 10,
-    backgroundColor: Themes.colors.purple,
-    borderRadius: 100,
-  },
-
-  buttonText: {
-    color: Themes.colors.white,
-    fontSize: 20,
-    fontWeight: '500',
   }
 });
   
