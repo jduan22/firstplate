@@ -11,7 +11,9 @@ export default function Message({navigation}) {
       
       <SafeAreaView class = "navigation" style={styles.navBar}>
         {/* <NavigationContainer independent> */}
-          <Pressable onPress={() => navigation.goBack()}>
+        <Pressable onPress={() => navigation.navigate('Messages')}>
+
+          {/* <Pressable onPress={() => navigation.goBack()}> */}
             <Image source={{ uri: 'https://cdn3.iconfinder.com/data/icons/mini-icon-set-web-design-device/91/Web_-_Design_-_Device_97-512.png' }}   
             style={{width: 40, height: 40}}/>
           </Pressable>

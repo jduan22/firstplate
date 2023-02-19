@@ -3,7 +3,7 @@ import {useRef} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, SafeAreaView, Pressable, Animated } from 'react-native';
 
-export default function MatchScreen() {
+export default function MatchScreen({navigation}) {
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const fadeIn = () => {
     // Will change fadeAnim value to 1 in 5 seconds
@@ -24,7 +24,7 @@ export default function MatchScreen() {
           <View style={styles.textContainer}>
             <Text style={styles.heading}>It's a plate!</Text>
             <Text style={styles.subheading}>📍Zareen’s</Text>
-            <Pressable>
+            <Pressable onPress={() => {navigation.navigate('Message')}}>
               <Text style={styles.interestTag}>Let's eat</Text>
             </Pressable>
           </View>

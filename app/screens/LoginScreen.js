@@ -54,11 +54,13 @@ export default function LoginScreen({ navigation}) {
           onPress={handleSignIn}
         >
           <Text style={styles.button}>Let's eat</Text>
-        </Pressable >
+        </Pressable>
 
-        <Text style={{marginTop: 20}}>
-          Don't have an account? <Pressable onPress={() => {navigation.navigate('BuildProfile')}}><Text>Sign up</Text></Pressable>
+        <View style={styles.textContainer}>
+        <Text>
+          Don't have an account? <Pressable onPress={() => {navigation.navigate('BuildProfile')}}><Text style={styles.text}>Sign Up</Text></Pressable>
         </Text>
+        </View>
 
         {error && <Text style={styles.errorText}>{error}</Text>}
     </View>
@@ -67,6 +69,14 @@ export default function LoginScreen({ navigation}) {
 
 
 const styles = StyleSheet.create({
+  text: {
+    paddingTop: 10,
+    paddingBottom: -10,
+  },
+  textContainer: {
+    marginTop: 20,
+    justifyContent: 'center',
+  },
   container: {
     flex: 1,
     alignItems: 'center',
@@ -74,7 +84,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff'
   },
   inputContainer: {
-    paddingTop: 10,
     paddingBottom: 10,
     marginTop: 20,
     marginBottom: 20,
@@ -115,7 +124,6 @@ const styles = StyleSheet.create({
     height: 40,
     padding: 10,
     marginTop: 20,
-    marginBottom: 20,
     marginLeft: 10,
     marginRight: 10,
     alignSelf: 'stretch',

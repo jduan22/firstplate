@@ -1,3 +1,4 @@
+import React, {Component} from 'react';
 import { useState, useEffect } from 'react';
 import { Themes, } from "../../assets/Themes";
 import { NavigationContainer } from '@react-navigation/native';
@@ -6,7 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 import supabase from "../../supabase";
 import DatePicker from 'react-native-datepicker';
 
-const App = () => {
+export default function HomeScreen({navigation}) {
   const [date, setDate] = useState(new Date());
   const [open, setOpen] = useState(false);
   return (
@@ -53,7 +54,7 @@ const App = () => {
             <Image style={styles.image} source={{ uri: 'https://10619-2.s.cdn12.com/maps/zareens-palo-alto-map.jpg' }} />
             <Text style={styles.bold}>zareen's info</Text>
             <View>
-              <View style={styles.row}>
+              <View style={styles.infoRow}>
                   <Text style={styles.tag}>💵 $20-30</Text>
                   <Text style={styles.tag}>🍛 pakistani/indian</Text>
                   <Text style={styles.tag}>🕯️ intimate vibe</Text>
@@ -66,10 +67,10 @@ const App = () => {
             <Image style={styles.image} source={{ uri: 'https://s3-media0.fl.yelpcdn.com/bphoto/XQPnnBaO6mbHrxrzX1gVUw/348s.jpg' }}/>
             <Image style={styles.image} source={{ uri: 'https://fastly.4sqi.net/img/general/600x600/501186204_GgUF9rufB2TMU7EHDXe4N8Ba13nozn-0V-g082vws1M.jpg' }}/>
             <Image style={styles.image} source={{ uri: 'https://s3-media0.fl.yelpcdn.com/bphoto/aB_GLw02ylwc-Mz2ByAeew/348s.jpg' }}/>
-              <Pressable style={{alignSelf: 'center'}} onPress={() => {navigation.navigate('Signup')}}>
+              <Pressable style={{alignSelf: 'center'}} onPress={() => {navigation.push('Match')}}>
                 <Text style={styles.submitButton}>🍽️</Text>
               </Pressable>
-              <Pressable style={{alignSelf: 'center', marginTop: 20}} onPress={() => {navigation.navigate('Signup')}}>
+              <Pressable style={{alignSelf: 'center', marginTop: 20}} >
                 <Text style={{fontSize: 18, fontStyle: 'italic'}}>
                   Not your cup of tea? See your next match
                 </Text>
@@ -83,6 +84,16 @@ const App = () => {
 
 const styles = StyleSheet.create({
   row: {
+    alignContent: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginTop: 5,
+    marginLeft: 15,
+    marginBottom: 5
+  },
+  infoRow: {
     alignContent: 'left',
     alignItems: 'left',
     flexDirection: 'row',
@@ -145,7 +156,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     borderRadius: 20,
     marginTop: 10,
-    marginBottom: 10
   },
   tag: {
     backgroundColor: 'white',
@@ -179,4 +189,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default App;
+// export default App;

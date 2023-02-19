@@ -15,6 +15,8 @@ import PayScreen from "./app/screens/PayScreen.js";
 import AllMessages from "./app/screens/AllMessages.js";
 import BuildProfile from "./app/screens/ProfileBuild.js";
 import Message from "./app/screens/Message.js";
+import Match from "./app/screens/MatchScreen.js";
+
 
 import heart from "./assets/heart.png"
 import handmoney from "./assets/hand-money.png"
@@ -58,6 +60,7 @@ export default function App() {
           <Stack.Screen name="MainTab" component={MainTab}/>
           <Stack.Screen name="AllMessages" component={AllMessages} />
           <Stack.Screen name="Message" component={Message}/> 
+          <Stack.Screen name="Match" component={Match} />
         </Stack.Navigator>
         :
         <Stack.Navigator>
