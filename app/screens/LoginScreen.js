@@ -40,6 +40,7 @@ export default function LoginScreen({ navigation}) {
             />
             <TextInput
               style={styles.input}
+              secureTextEntry = {true}
               onChangeText={setPassword}
               keyboardType = 'visible-password'
               value={password}
