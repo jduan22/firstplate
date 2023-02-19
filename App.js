@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 import supabase from "./supabase.js";
 import { Themes } from "./assets/Themes";
 import { NavigationContainer } from '@react-navigation/native';
@@ -16,9 +16,10 @@ import AllMessages from "./app/screens/AllMessages.js";
 import BuildProfile from "./app/screens/ProfileBuild.js";
 import Message from "./app/screens/Message.js";
 
-
-
-
+import heart from "./assets/heart.png"
+import handmoney from "./assets/hand-money.png"
+import lovemessage from "./assets/love-message.png"
+import profile from "./assets/profile.jpeg"
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -51,11 +52,63 @@ export default function App() {
   return (
     <NavigationContainer>
       {authSession ?
-        <Tab.Navigator>
-          <Tab.Screen name="First Plate" component={HomeScreen} />
-          <Tab.Screen name="Messages" component={AllMessages} />
-          <Tab.Screen name="Pay it Forwards" component={PayScreen} />
-          <Tab.Screen name="Profile" component={ProfileScreen} />
+        <Tab.Navigator tabBarOptions={{ showLabel: false }}>
+          <Tab.Screen name="First Plate" component={HomeScreen}
+            options={{
+                tabBarIcon: ({ focused, tintColor }) => {
+                    return <Image
+                        source={heart}
+                        resizeMode='contain'
+                        style={{
+                            width: 25,
+                            height: 25
+                        }}
+                    />
+                }
+            }}          
+          />
+          <Tab.Screen name="Messages" component={AllMessages} 
+            options={{
+              tabBarIcon: ({ focused, tintColor }) => {
+                  return <Image
+                      source={lovemessage}
+                      resizeMode='contain'
+                      style={{
+                          width: 25,
+                          height: 25
+                      }}
+                  />
+              }
+          }}    
+          />
+          <Tab.Screen name="Pay it Forwards" component={PayScreen} 
+            options={{
+              tabBarIcon: ({ focused, tintColor }) => {
+                  return <Image
+                      source={handmoney}
+                      resizeMode='contain'
+                      style={{
+                          width: 35,
+                          height: 35
+                      }}
+                  />
+              }
+            }}
+          />
+          <Tab.Screen name="Profile" component={ProfileScreen}
+          options={{
+            tabBarIcon: ({ focused, tintColor }) => {
+                return <Image
+                    source={profile}
+                    resizeMode='contain'
+                    style={{
+                        width: 25,
+                        height: 25
+                    }}
+                />
+            }
+          }}
+          />
         </Tab.Navigator>
         :
         <Stack.Navigator>
