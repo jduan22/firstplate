@@ -5,14 +5,18 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 export default function Message() {
+
   return (
     <SafeAreaView style={styles.container}>
       
       <SafeAreaView class = "navigation" style={styles.navBar}>
-        <Pressable onPress={() => navigation.navigate('AllMessages')}>
-          <Image source={{ uri: 'https://cdn3.iconfinder.com/data/icons/mini-icon-set-web-design-device/91/Web_-_Design_-_Device_97-512.png' }}   
-          style={{width: 40, height: 40}}/>
-        </Pressable>
+        <NavigationContainer>
+          <Pressable onPress={() => navigation.push('AllMessages')}>
+            <Image source={{ uri: 'https://cdn3.iconfinder.com/data/icons/mini-icon-set-web-design-device/91/Web_-_Design_-_Device_97-512.png' }}   
+            style={{width: 40, height: 40}}/>
+          </Pressable>
+        </NavigationContainer>
+        
       </SafeAreaView>
       
 

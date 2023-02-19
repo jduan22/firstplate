@@ -7,36 +7,23 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 export default function AllMessages() {
   return (
     <SafeAreaView style={styles.container}>
-      
-      <SafeAreaView class = "navigation" style={styles.navBar}>
-        <Pressable onPress={() => navigation.navigate('App')}>
-          <Image source={{ uri: 'https://cdn3.iconfinder.com/data/icons/mini-icon-set-web-design-device/91/Web_-_Design_-_Device_97-512.png' }}   
-          style={{width: 40, height: 40}}/>
-        </Pressable>
-
-        <Text style={styles.heading}>messages</Text>
-      </SafeAreaView>
-      
-
       <SafeAreaView class = "listOfMessages">
+          <Pressable class = "singularMessages" style={styles.messageContainer} onPress={() => navigation.navigate('Message')}>
+            
+            <SafeAreaView style={styles.profilepic}>
+              <Image source={{ uri: 'https://news.stanford.edu/wp-content/uploads/2017/02/drell_feach.jpg' }}   
+            style={styles.circleImage} />
+            </SafeAreaView>
+            <SafeAreaView style={styles.name}>
+              <Text style={styles.realName}>Persis Drell</Text>
+              <Text>Typing...</Text>
+            </SafeAreaView>
+            <SafeAreaView style={styles.time}>
+              <Text>9:25 PM</Text>
+            </SafeAreaView>
 
-        <SafeAreaView class = "singularMessages" style={styles.messageContainer}>
+          </Pressable>
 
-          <SafeAreaView style={styles.profilepic}>
-            <Image source={{ uri: 'https://news.stanford.edu/wp-content/uploads/2017/02/drell_feach.jpg' }}   
-          style={styles.circleImage} />
-          </SafeAreaView>
-          <SafeAreaView style={styles.name}>
-            <Text style={styles.realName}>Persis Drell</Text>
-            <Text>Typing...</Text>
-          </SafeAreaView>
-          <SafeAreaView style={styles.time}>
-            <Text>9:25 PM</Text>
-          </SafeAreaView>
-
-        </SafeAreaView>
-
-        {/* <hr /> */}
 
         <SafeAreaView class = "singularMessages" style={styles.messageContainer}>
 
@@ -168,9 +155,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     marginBottom: 60,
-    marginTop: 60,
-    borderWidth: 0.5,
-    borderColor: 'light grey',
+    marginTop: 30,
   },
   
   profilepic: {
