@@ -1,17 +1,15 @@
 import React, {Component} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, SafeAreaView, Pressable, TouchableOpacity} from 'react-native';
-
-function onPressFunction() {
-  //navigation function here
-}
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 export default function Message() {
   return (
     <SafeAreaView style={styles.container}>
       
       <SafeAreaView class = "navigation" style={styles.navBar}>
-        <Pressable onPress={onPressFunction}>
+        <Pressable onPress={() => navigation.navigate('AllMessages')}>
           <Image source={{ uri: 'https://cdn3.iconfinder.com/data/icons/mini-icon-set-web-design-device/91/Web_-_Design_-_Device_97-512.png' }}   
           style={{width: 40, height: 40}}/>
         </Pressable>

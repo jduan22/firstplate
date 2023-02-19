@@ -147,5 +147,11 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     marginTop: 5,
     marginBottom: 5,
-  }
+  },
+  navBar: {
+    flex: 0.5,
+    flexDirection: 'row',
+    alignSelf: 'flex-start',
+    marginLeft: 5,
+  },
 });
