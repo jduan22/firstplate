@@ -4,18 +4,19 @@ import { StyleSheet, Text, View, Image, SafeAreaView, Pressable, TouchableOpacit
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export default function AllMessages() {
+export default function AllMessages({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
       <SafeAreaView class = "listOfMessages">
-          <Pressable class = "singularMessages" style={styles.messageContainer} onPress={() => navigation.navigate('Message')}>
+          <Pressable class = "singularMessages" style={styles.messageContainer}>
             
             <SafeAreaView style={styles.profilepic}>
               <Image source={{ uri: 'https://news.stanford.edu/wp-content/uploads/2017/02/drell_feach.jpg' }}   
             style={styles.circleImage} />
             </SafeAreaView>
             <SafeAreaView style={styles.name}>
-              <Text style={styles.realName}>Persis Drell</Text>
+            <Pressable onPress={() => {navigation.navigate('Message')}}>
+             <Text style={styles.realName}>Persis Drell </Text></Pressable>
               <Text>Typing...</Text>
             </SafeAreaView>
             <SafeAreaView style={styles.time}>

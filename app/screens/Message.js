@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image, SafeAreaView, Pressable, TouchableOpacit
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export default function Message() {
+export default function Message({navigation}) {
 
   return (
     <SafeAreaView style={styles.container}>
