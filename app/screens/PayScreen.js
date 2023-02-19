@@ -47,7 +47,7 @@ export default function PayScreen() {
       headers: {
         accept: 'application/json',
         'content-type': 'application/json',
-        Authorization: '7dcdee319a297ca223d626b1a9ed0d00:a9569ec94372b0602318e88603d2561a'
+        Authorization: '0056ec84f05647728cf5f8ca7750b3ff:6XRkFQVC8XYGJcvFRHDIPHocq6lVu6'
       },
       body: JSON.stringify({
         recipient: email,
