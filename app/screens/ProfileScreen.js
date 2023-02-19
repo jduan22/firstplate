@@ -124,9 +124,9 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   circleImage: {
-    width: 200,
-    height: 200,
-    borderRadius: 200 / 2,
+    width: 180,
+    height: 180,
+    borderRadius: 180 / 2,
     alignSelf: 'center',
   },
   interestTag: {
