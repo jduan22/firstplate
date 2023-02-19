@@ -33,6 +33,7 @@ export default function LoginScreen({ navigation}) {
             <TextInput
               style={styles.input}
               onChangeText={setEmail}
+              keyboardType = 'email-address'
               value={email}
               placeholder="email"
               placeholderTextColor='#FF9F9F'
@@ -40,6 +41,7 @@ export default function LoginScreen({ navigation}) {
             <TextInput
               style={styles.input}
               onChangeText={setPassword}
+              keyboardType = 'visible-password'
               value={password}
               placeholder="password"
               placeholderTextColor='#FF9F9F'
@@ -117,12 +119,9 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     alignSelf: 'stretch',
-    borderRadius: 20,
+    borderRadius: 40,
     borderColor: '#FF9F9F',
     borderWidth: 2
-  },
-  curvedTag: {
-    borderRadius: 45,
   },
   errorText: {
     color: Themes.colors.white,
