@@ -58,127 +58,115 @@ export default function SignupScreen({ navigation}) {
   }
   
   return (
-    <View style={styles.screenContainer}>
-      <Text style={[styles.heading, styles.textShadow]}>*app title*</Text>
-
-      <ScrollView contentContainerStyle={styles.loginContainer}>
-        <Text style={[styles.title, styles.textShadow]}>join us!</Text>
+    <View style={styles.container}>
+      <Text style={styles.heading}>first plates</Text>
+        <Text style={styles.subheading}>join us!</Text>
 
         <View style={styles.loginForm}>
           <View style={styles.inputContainer}>
-            <Text style={[styles.inputLabel, styles.textShadow]}>email:</Text>
             <TextInput
               style={styles.input}
               onChangeText={setEmail}
               value={email}
-              placeholder=""
+              placeholder="email"
+              placeholderTextColor='#FF9F9F'
             />
-          </View>
-
-          <View style={styles.inputContainer}>
-            <Text style={[styles.inputLabel, styles.textShadow]}>username:</Text>
             <TextInput
               style={styles.input}
               onChangeText={setUsername}
               value={username}
-              placeholder=""
+              placeholder="username"
+              placeholderTextColor='#FF9F9F'
             />
-          </View>
-
-          <View style={styles.inputContainer}>
-            <Text style={[styles.inputLabel, styles.textShadow]}>full name:</Text>
             <TextInput
               style={styles.input}
               onChangeText={setFullName}
               value={fullName}
-              placeholder=""
+              placeholder="full name"
+              placeholderTextColor='#FF9F9F'
             />
-          </View>
-          
-          <View style={styles.inputContainer}>
-            <Text style={[styles.inputLabel, styles.textShadow]}>password:</Text>
             <TextInput
               secureTextEntry = {true}
               style={styles.input}
               onChangeText={setPassword}
               value={password}
-              placeholder=""
+              placeholder="password"
+              placeholderTextColor='#FF9F9F'
             />
           </View>
         </View>
 
-        <Pressable
-          style={styles.button}
-          onPress={handleSignUp}
-        >
-          <Text style={[styles.buttonText, styles.textShadow]}>let's move</Text>
+        <Pressable onPress={handleSignUp}>
+          <Text style={styles.button}>let's eat</Text>
         </Pressable >
 
-        <Text style={styles.smallText}>
+        <Text style={{marginTop: 20}}>
           Already have an account? <Pressable onPress={() => {navigation.navigate('Login')}}><Text>Log in</Text></Pressable>
         </Text>
 
         {error && <Text style={styles.errorText}>{error}</Text>}
-      </ScrollView>
     </View>
   );
 }
 
 
 const styles = StyleSheet.create({
-  screenContainer: {
-    flex: 1,
-    padding: 30,
-    backgroundColor: Themes.colors.sage,
-  },
-
-  textShadow: {
-    textShadowColor: Themes.colors.shadow,
-    textShadowOffset: {width: -4, height: 4},
-    textShadowRadius: 12,
-  },
-
-  heading: {
-    textAlign: 'center',
-    fontSize: 26,
-    fontWeight: '600',
-    marginTop: 15,
-  },
-
-  loginContainer: {
+  container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#fff'
   },
-
-  title: {
-    fontSize: 26,
-    textAlign: 'center',
-    marginBottom: 45,
-  },
-
-  loginForm: {
+  inputContainer: {
+    paddingTop: 10,
+    paddingBottom: 10,
+    marginTop: 20,
+    marginBottom: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
     alignSelf: 'stretch',
-    paddingHorizontal: 17,
-    paddingTop: 9,
-    paddingBottom: 37,
-    backgroundColor: Themes.colors.purple,
-    borderRadius: 25,
-    marginBottom: 45,
+    width: 300
   },
-
-  inputLabel: {
-    marginTop: 9,
-    marginBottom: 5,
+  heading: {
+    alignItems: 'center',
+    fontWeight: 'bold',
+    alignSelf: 'center',
+    fontSize: 41,
+    justifyContent: 'center',
+    marginBottom: 10, 
   },
-
+  subheading: {
+    fontWeight: 'bold',
+    fontSize: 24,
+    textAlign: 'center',
+    alignSelf: 'center'
+  },
+  button: {
+    backgroundColor: '#FF9F9F', 
+    alignSelf: 'center',
+    borderRadius: 20,
+    overflow: 'hidden', 
+    color: 'white',
+    fontSize: 24,
+    textAlign: 'center',
+    paddingHorizontal: 8,
+    paddingVertical: 6,
+    marginRight: 5,
+    width: 170,
+  },
   input: {
+    backgroundColor: 'white',
     height: 40,
     padding: 10,
-    backgroundColor: Themes.colors.white,
-    borderRadius: 8,
+    marginTop: 10,
+    marginBottom: 10,
+    marginLeft: 10,
+    marginRight: 10,
+    alignSelf: 'stretch',
+    borderRadius: 40,
+    borderColor: '#FF9F9F',
+    borderWidth: 2
   },
-
   errorText: {
     color: Themes.colors.white,
     fontSize: 15,
@@ -187,19 +175,6 @@ const styles = StyleSheet.create({
     backgroundColor: Themes.colors.red,
     borderRadius: 100,
     marginTop: 20,
-  },
-
-  button: {
-    paddingHorizontal: 33,
-    paddingVertical: 10,
-    backgroundColor: Themes.colors.purple,
-    borderRadius: 100,
-  },
-
-  buttonText: {
-    color: Themes.colors.white,
-    fontSize: 20,
-    fontWeight: '500',
   }
 });
   
