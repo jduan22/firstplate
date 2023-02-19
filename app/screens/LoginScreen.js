@@ -57,7 +57,7 @@ export default function LoginScreen({ navigation}) {
         </Pressable >
 
         <Text style={{marginTop: 20}}>
-          Don't have an account? <Pressable onPress={() => {navigation.navigate('Signup')}}><Text>Sign up</Text></Pressable>
+          Don't have an account? <Pressable onPress={() => {navigation.navigate('BuildProfile')}}><Text>Sign up</Text></Pressable>
         </Text>
 
         {error && <Text style={styles.errorText}>{error}</Text>}

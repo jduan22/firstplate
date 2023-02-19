@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, SafeAreaView, Pressable, Image } from 'react-native';
 import DatePicker from 'react-native-datepicker';
 
-export default function App() {
+export default function ProfileBuild({navigation}) {
   const [date, setDate] = useState(new Date());
   const [open, setOpen] = useState(false);
   const [city, setCity] = useState(null);
@@ -55,7 +55,7 @@ export default function App() {
           </View>
         </View>
         <View>
-          <Pressable>
+          <Pressable onPress={() => {navigation.navigate('Signup')}}>
             <Text style={styles.button}>Complete profile</Text>
           </Pressable>
         </View>
