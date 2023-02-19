@@ -42,7 +42,6 @@ export default function LoginScreen({ navigation}) {
               style={styles.input}
               secureTextEntry = {true}
               onChangeText={setPassword}
-              keyboardType = 'visible-password'
               value={password}
               placeholder="password"
               placeholderTextColor='#FF9F9F'

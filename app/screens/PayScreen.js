@@ -6,7 +6,7 @@ let name = "Lucia";
 let email = "langaneylucia03@gmail.com";
 let description = "Someone paid for your plate!";
 
-export default function App() {
+export default function PayScreen() {
   const [amount, setAmount] = useState(0);
     return (
       <>
