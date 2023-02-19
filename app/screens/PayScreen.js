@@ -13,12 +13,18 @@ export default function PayScreen() {
         <SafeAreaView style={styles.container}>
         <View>
           <Text style={styles.heading}>pay it forward</Text>
+          <View style={styles.text}>
           <Text>Enjoyed your plate? Pay it forward by funding another person's plate!</Text>
+          </View>
           <Image source={{ uri: 'https://d112y698adiu2z.cloudfront.net/photos/production/user_photos/001/651/471/datas/profile.png' }}   
         style={styles.circleImage} />
         <View style={styles.formContainer}>
-          <Text style={styles.input}>{name}</Text>
-          <Text style={styles.input}>{email}</Text>
+          <View style={styles.input}>
+          <Text>{name}</Text>
+          </View>
+          <View style={styles.input}>
+          <Text>{email}</Text>
+          </View>
           <TextInput placeholder="$"
           keyboardType = 'numeric' 
           style={styles.input}
@@ -59,6 +65,9 @@ export default function PayScreen() {
   
   
   const styles = StyleSheet.create({
+    text: {
+      width: '90%',
+    },
     container: {
       flex: 1,
       alignItems: 'center',
@@ -67,12 +76,12 @@ export default function PayScreen() {
     formContainer: {
       backgroundColor: '#FF9F9F',
       paddingTop: 10,
-      paddingBottom: 10,
       marginTop: 20,
       marginBottom: 20,
       alignItems: 'center',
       justifyContent: 'center',
       alignSelf: 'stretch',
+      borderRadius: 20,
     },
     heading: {
       alignItems: 'center',
@@ -111,6 +120,7 @@ export default function PayScreen() {
       marginLeft: 10,
       marginRight: 10,
       alignSelf: 'stretch',
+      borderRadius: 10,
 
     },
     curvedTag: {
