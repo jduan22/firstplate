@@ -74,12 +74,12 @@ export default function ProfileScreen() {
           </View>
           <Text style={styles.subheading}>Other interests</Text>
           <View style={styles.row}>
-            <Text style={styles.interestTag}>Golf</Text>
-            <Text style={styles.interestTag}>Yoga</Text>
+            <Text style={styles.interestTag}>Cooking</Text>
+            <Text style={styles.interestTag}>Travel</Text>
           </View>
           <View style={styles.row}>
-            <Text style={styles.interestTag}>Research</Text>
-            <Text style={styles.interestTag}>Tiktok</Text>
+            <Text style={styles.interestTag}>Art</Text>
+            <Text style={styles.interestTag}>Music</Text>
           </View>
           <Pressable style={styles.signout} onPress={handleSignOut}>
             <Text>Sign out</Text>
