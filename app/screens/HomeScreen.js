@@ -7,8 +7,9 @@ import supabase from "../../supabase";
 
 const App = () => {
   return (
-    <SafeAreaView style={styles.scroll}>
-      <ScrollView style={{flex: 1}}>
+    // <SafeAreaView style={styles.scroll}>
+    <>
+      <ScrollView>
         <View style={styles.row}>
           <View style={styles.interestTag}><Text>Tuesday, February 14th</Text></View>
           <View style={styles.interestTag}><Text>6:30pm</Text></View>
@@ -36,10 +37,10 @@ const App = () => {
           <View style={styles.vertical}>
             <Text style={styles.bold}>address</Text>
             <Image style={styles.imageTwo} source={{ uri: 'https://10619-2.s.cdn12.com/maps/zareens-palo-alto-map.jpg' }} />
-            <Text>zareen's info</Text>
+            <Text style={styles.bold}>zareen's info</Text>
             <View>
-              <View>
-                <View>
+              <View style={styles.row}>
+                <View style={styles.interestTag}>
                   <Text> $20-30</Text>
                 </View>
                 <View>
@@ -71,7 +72,8 @@ const App = () => {
           </View>
         </View>
       </ScrollView>
-    </SafeAreaView>
+    {/* // </SafeAreaView> */}
+    </>
   );
 };
 
