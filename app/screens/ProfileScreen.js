@@ -54,9 +54,20 @@ export default function ProfileScreen() {
   return (
     <>
       <SafeAreaView style={styles.container}>
-      <Pressable onPress={handleSignOut}>
-          <Text>Sign out</Text>
-        </Pressable>
+        <SafeAreaView style={styles.navBar}>
+          <Pressable onPress={() => navigation.navigate('AllMessages')}>
+            <Image source={{ uri: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.iconpacks.net%2Ffree-icon%2Flove-message-2947.html&psig=AOvVaw1sAbmmELV5owb7MtM92BO1&ust=1676866130622000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCNCmjaLboP0CFQAAAAAdAAAAABAE' }}   
+            style={{width: 40, height: 40}}/>
+          </Pressable>
+
+          <Pressable onPress={handleSignOut}>
+            <Text style={styles.subheading}>Sign out</Text>
+          </Pressable>
+        </SafeAreaView>
+      
+
+
+
       <View>
         <Image source={{ uri: 'https://president.stanford.edu/wp-content/uploads/sites/3/2020/01/MTL_720px.jpg' }}   
         style={styles.circleImage} />
@@ -149,6 +160,12 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     marginTop: 5,
     marginBottom: 5,
-  }
+  },
+  navBar: {
+    flex: 0.5,
+    flexDirection: 'row',
+    alignSelf: 'flex-start',
+    marginLeft: 5,
+  },
 });
   
