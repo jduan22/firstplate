@@ -14,6 +14,8 @@ import HomeScreen from "./app/screens/HomeScreen.js";
 import PayScreen from "./app/screens/PayScreen.js";
 import AllMessages from "./app/screens/AllMessages.js";
 import BuildProfile from "./app/screens/ProfileBuild.js";
+import Message from "./app/screens/Message.js";
+
 
 
 
@@ -52,7 +54,6 @@ export default function App() {
         <Tab.Navigator>
           <Tab.Screen name="First Plate" component={HomeScreen} />
           <Tab.Screen name="Messages" component={AllMessages} />
-
           <Tab.Screen name="Pay it Forwards" component={PayScreen} />
           <Tab.Screen name="Profile" component={ProfileScreen} />
         </Tab.Navigator>

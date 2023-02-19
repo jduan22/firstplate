@@ -11,8 +11,8 @@ const App = () => {
     <>
       <ScrollView>
         <View style={styles.row}>
-          <View style={styles.interestTag}><Text>Tuesday, February 14th</Text></View>
-          <View style={styles.interestTag}><Text>6:30pm</Text></View>
+          <View style={styles.dateTag}><Text>Tuesday, February 14th</Text></View>
+          <View style={styles.dateTag}><Text>6:30pm</Text></View>
         </View>
         <Image
           style={styles.imageOne}
@@ -140,6 +140,9 @@ export default App;
 // }
 
 const styles = StyleSheet.create({
+  interestTag: {
+
+  },
   scroll: {
     flex: 1,
     paddingTop: StatusBar.currentHeight,
@@ -187,7 +190,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     borderRadius: 20,
   },
-  interestTag: {
+  dateTag: {
     backgroundColor: '#FF9F9F',
     alignSelf: 'flex-start',
     borderRadius: 20,
