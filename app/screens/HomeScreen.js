@@ -4,15 +4,31 @@ import { NavigationContainer } from '@react-navigation/native';
 import { View, ScrollView, Text, Pressable, StyleSheet, SafeAreaView, Image, StatusBar } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import supabase from "../../supabase";
+import DatePicker from 'react-native-datepicker';
 
 const App = () => {
+  const [date, setDate] = useState(new Date());
+  const [open, setOpen] = useState(false);
   return (
     // <SafeAreaView style={styles.scroll}>
     <>
       <ScrollView>
         <View style={styles.row}>
-          <View style={styles.dateTag}><Text>Tuesday, February 14th</Text></View>
-          <View style={styles.dateTag}><Text>6:30pm</Text></View>
+          <DatePicker mode="datetime"
+          open={open}
+          date={date}
+          style={{width: 200}}
+          onDateChange={(date) => {
+            setDate(date);
+          }}
+          onConfirm={(date) => {
+            setOpen(false)
+            setDate(date)
+          }}
+          onCancel={() => {
+            setOpen(false)
+          }}
+          />
         </View>
         <Image
           style={styles.imageOne}
@@ -140,9 +156,6 @@ export default App;
 // }
 
 const styles = StyleSheet.create({
-  interestTag: {
-
-  },
   scroll: {
     flex: 1,
     paddingTop: StatusBar.currentHeight,
@@ -205,6 +218,7 @@ const styles = StyleSheet.create({
   },
   row: {
     alignContent: 'center',
+    alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
     flexWrap: 'wrap',
