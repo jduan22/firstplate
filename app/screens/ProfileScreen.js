@@ -65,7 +65,7 @@ export default function ProfileScreen() {
         <View style={styles.profile}>
           <Text style={styles.subheading}>Food interests</Text>
           <View style={styles.row}>
-            <Text style={styles.interestTag}>Italian</Text>
+            <Text style={styles.interestTag}>Indian</Text>
             <Text style={styles.interestTag}>American</Text>
           </View>
           <View style={styles.row}>
