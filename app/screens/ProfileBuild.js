@@ -36,12 +36,27 @@ export default function App() {
               placeholder="City, State"
               placeholderTextColor='#FF9F9F'/>
           <Text style={styles.subheading}>Choose your food interests</Text>
+          <View style={styles.row}>
+            <Text style={styles.interestTag}>Italian</Text>
+            <Text style={styles.interestTag}>American</Text>
+          </View>
           <Text style={styles.subheading}>Choose your food price range</Text>
+          <View style={styles.row}>
+            <Text style={styles.interestTag}>$</Text>
+            <Text style={styles.interestTag}>$$</Text>
+            <Text style={styles.interestTag}>$$$</Text>
+            <Text style={styles.interestTag}>$$$$</Text>
+          </View>
           <Text style={styles.subheading}>Choose your other interests</Text>
+          <View style={styles.row}>
+            <Text style={styles.interestTag}>Golf</Text>
+            <Text style={styles.interestTag}>Yoga</Text>
+            <Text style={styles.interestTag}>Email</Text>
+          </View>
         </View>
         <View>
           <Pressable>
-            <Text style={styles.subheading}></Text>
+            <Text style={styles.button}>Complete profile</Text>
           </Pressable>
         </View>
         <StatusBar style="auto" />
